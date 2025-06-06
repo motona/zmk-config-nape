@@ -156,7 +156,7 @@
 
         orientation270_layer {
             bindings = <
-&lt 10 BACKSPACE  &mkp MB1  &lt_mkp 13 MB3  &mo 8  &mo 9  &mo 11
+&lt_mkp 10 MB2  &mkp MB1  &lt 13 BACKSPACE  &mo 8  &mo 9  &mo 11
             >;
         };
 
