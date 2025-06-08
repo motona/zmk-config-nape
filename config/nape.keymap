@@ -226,7 +226,7 @@
 
         layer_15 {
             bindings = <
-&kp ENTER  &trans  &kp C(T)  &trans  &trans  &trans
+&kp ENTER  &trans  &kp F5  &trans  &trans  &trans
             >;
         };
     };
