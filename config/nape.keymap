@@ -226,7 +226,7 @@
 
         layer_15 {
             bindings = <
-&kp ENTER  &trans  &kp DELETE  &trans  &trans  &trans
+&kp ENTER  &trans  &kp F5  &trans  &trans  &trans
             >;
         };
     };
