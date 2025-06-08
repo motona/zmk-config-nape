@@ -226,7 +226,7 @@
 
         layer_15 {
             bindings = <
-&kp ENTER  &trans  &kp F5  &trans  &trans  &trans
+&kp ENTER  &trans  &ct_macro  &trans  &trans  &trans
             >;
         };
     };
@@ -250,15 +250,15 @@
 / {
     macros {
         // "ct_macro" という名前でCtrl+tのマクロを定義
+
         ct_macro: ct_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <
-                &macro_press LC(C),      // 左Ctrlキーを押す
-                &macro_press T,          // Tキーを押す
-                &macro_release T,        // Tキーを離す
-                &macro_release LC(C)     // 左Ctrlキーを離す
-            >;
+            bindings =
+                <&macro_press LC(C)>,
+                <&macro_press T>,
+                <&macro_release T>,
+                <&macro_release LC(C)>;
         };
 
         // (オプション) &macro_tap を使った簡潔な記述例 (通常はこちらで十分)
