@@ -101,6 +101,16 @@
 
     // キーマップの定義
 
+    macros {
+        cr_macro: ct_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>, <&kp LC(R)>;
+
+            label = "CT_MACRO";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -226,7 +236,7 @@
 
         layer_15 {
             bindings = <
-&kp ENTER  &trans  &kp F5  &trans  &trans  &trans
+&kp ENTER  &trans  &cr_macro  &trans  &trans  &trans
             >;
         };
     };
