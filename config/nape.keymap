@@ -106,65 +106,65 @@
 
         // レイヤー0（0°、USBポートを下向きにした状態）"
 
-        Layer0 {
+        orientation0_layer {
             bindings = <
-&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &trans
+&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
 
         // レイヤー1（時計回り45°）
 
-        Layer1 {
+        orientation45_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans
+&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
 
         // レイヤー2（時計回り90°）
 
-        Layer2 {
+        orientation90_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans
+&lt_mkp 10 MB2  &mkp MB1  &lt_mkp 12 MB3  &mo 8  &mo 9  &mo 11
             >;
         };
 
         // レイヤー3（時計回り135°）
 
-        Layer3 {
+        orientation135_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans
+&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
 
         // レイヤー4（時計回り180°）
 
-        Layer4 {
+        orientation180_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans
+&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
 
         // レイヤー5（時計回り225°）
 
-        Layer5 {
+        orientation225_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans
+&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
 
         // レイヤー6（時計回り270°）
 
-        Layer6 {
+        orientation270_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans
+&lt_mkp 10 MB2  &mkp MB1  &lt 13 BACKSPACE  &mo 8  &mo 9  &mo 11
             >;
         };
 
         // レイヤー7（時計回り315°）
 
-        Layer7 {
+        orientation315_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans
+&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
             >;
         };
 
@@ -188,7 +188,7 @@
 
         scroll_layer {
             bindings = <
-&mkp MB3  &mkp MB4  &mkp MB5  &trans  &trans  &trans
+&mkp MB3  &lt_mkp 15 MB4  &lt_mkp 14 MB5  &trans  &trans  &trans
             >;
 
             // トラックボールの動きをスクロールに変換
@@ -199,6 +199,36 @@
         };
 
         // レイヤー11（使用向き選択レイヤー）
+
+        orientation_layer {
+            bindings = <
+&to 2  &to 4  &to 6  &to 0  &to 5  &trans
+            >;
+        };
+
+        layer_12 {
+            bindings = <
+&kp LEFT_ARROW  &kp RIGHT_ARROW  &none  &trans  &trans  &trans
+            >;
+        };
+
+        layer_13 {
+            bindings = <
+&kp RIGHT_ARROW  &kp LEFT_ARROW  &none  &trans  &trans  &trans
+            >;
+        };
+
+        layer_14 {
+            bindings = <
+&kp DOWN_ARROW  &kp UP_ARROW  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        layer_15 {
+            bindings = <
+&kp LC(W)  &trans  &kp LC(R)  &trans  &trans  &trans
+            >;
+        };
     };
 };
 
@@ -212,6 +242,7 @@
             bindings = <&mo 10>;
             key-positions = <1 2>;
             timeout-ms = <50>;
+            layers = <0 1 3 4 5 7>;
         };
     };
 };
