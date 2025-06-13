@@ -53,6 +53,18 @@
             codes = <INPUT_REL_HWHEEL>;
             track-remainders;
         };
+
+        // マウスカーソルの動きを半分にするスケーラー
+        half_move_scaler: half_move_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_X INPUT_REL_Y>; // XとY両方の動きに適用
+            factor = <500 1000>; // 500/1000 = 0.5 (半分)
+            track-remainders;
+        };
+        // ------------------------------------------------
+
     };
 };
 
