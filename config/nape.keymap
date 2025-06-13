@@ -53,6 +53,40 @@
             codes = <INPUT_REL_HWHEEL>;
             track-remainders;
         };
+
+        // マウスカーソルの動きを半分にするスケーラー
+        half_move_scaler: half_move_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_X INPUT_REL_Y>; // XとY両方の動きに適用
+            factor = <500 1000>; // 500/1000 = 0.5 (半分)
+            track-remainders;
+        };
+        // ------------------------------------------------
+
+        // --- 新規追加: スクロールの動きを半分にするスケーラー ---
+        half_scroll_scaler: half_scroll_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>; // 垂直・水平スクロールに適用
+            factor = <500 1000>; // 500/1000 = 0.5 (半分)
+            track-remainders;
+        };
+        // --------------------------------------------------------
+
+        // --- ここにスクロールを2倍にするスケーラーを追加 ---
+        double_scroll_scaler: double_scroll_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>; // 垂直と水平スクロールの両方に適用
+            factor = <2000 1000>; // 2000/1000 = 2.0 (2倍)
+            track-remainders;
+        };
+        // ----------------------------------------------------
+
     };
 };
 
